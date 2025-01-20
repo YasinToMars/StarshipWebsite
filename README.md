@@ -35,3 +35,15 @@ In this page the user can contact the website's admin. The user can enter their 
 # Admin Website:
 This website has only one page, showing the messages (including their Email and Name) sent by the user. The datas are being loaded from the database. 
 ![Screenshot 2025-01-14 at 9 57 33 AM](https://github.com/user-attachments/assets/2300b703-f36b-41a5-b799-342a1c499ec1)
+
+# How does the database creation work? 
+The PostgreSql database will be created in render.com <br> 
+Using the `psql` command (with the external database URL) we can connect to the database. We enter the SQL Table creation command to create a table:
+```CREATE TABLE contact (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    message TEXT NOT NULL,
+    submitted_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+```
