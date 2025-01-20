@@ -3,18 +3,9 @@ import sqlite3
 import psycopg2
 import os
 
-
-DATABASE_URL = os.getenv("DATABASE_URL")
-
-### CONNECTING WITH THE DATABASE FOR CONTACT PAGE
-try:
-    conn = psycopg2.connect(DATABASE_URL, sslmode="require")
-    print("Database connected successfully!")
-except Exception as e:
-    print("Error connecting to database:", e)
-
 app = Flask(__name__)
 
+# Route for the homepage
 @app.route('/')
 def home():
     return render_template("index.html")
@@ -42,12 +33,26 @@ def news():
 def contact():
     return render_template('contact.html')
 
+# Fetch DATABASE_URL from environment variables (use External URL if running locally)
+DATABASE_URL = os.getenv(
+    "DATABASE_URL",
+    "postgresql://starshipcontactus_user:zag0Thjg9L1E4muCunhZZe5BsY6IoLKU@dpg-cu76hobqf0us73e2bh80-a/starshipcontactus"
+)
+
+# Connect to the database
+try:
+    conn = psycopg2.connect(DATABASE_URL, sslmode="require")
+    print("Database connected successfully!")
+except Exception as e:
+    print("Error connecting to database:", e)
+
 @app.route('/submit_contact', methods=['POST'])
 def submit_contact():
     name = request.form['name']
     email = request.form['email']
     message = request.form['message']
 
+    # Save the data in the database
     try:
         cur = conn.cursor()
         cur.execute(
@@ -60,6 +65,9 @@ def submit_contact():
     except Exception as e:
         print("Error saving data:", e)
         return render_template('contact.html', success=False)
-    
+
+    return render_template('contact.html', success=True)
 if __name__ == '__main__':
     app.run(debug=True)
+
+
