@@ -29,9 +29,9 @@ In this page, the user can see the schedule for road closures (HW4 at Starbase).
 ![Screenshot 2025-01-14 at 9 34 45 AM](https://github.com/user-attachments/assets/3020cc5f-e2ed-4c96-a096-f8e3c15c2020)
 
 ### Page 4: Contact Us
-In this page the user can contact the website's admin. The user can enter their name, email and their message. These infos (name, email and message) will be dumped into a databse (`contact.db` file).
+In this page the user can contact the website's admin. The user can enter their name, email and their message. These infos (name, email and message) will be dumped into a PostgreSQL databse.
 ![Screenshot 2025-01-14 at 9 40 29 AM](https://github.com/user-attachments/assets/325e02f0-4962-4410-abae-5367d0a775d8)
 
 # Admin Website:
-This website has only one page, showing the messages (including their Email and Name) sent by the user. The datas are being loaded from `contact.db` databse file. This page gets updated anytime the a new user sends a new message (with Email and Name)
+This website has only one page, showing the messages (including their Email and Name) sent by the user. The datas are being loaded from the database. 
 ![Screenshot 2025-01-14 at 9 57 33 AM](https://github.com/user-attachments/assets/2300b703-f36b-41a5-b799-342a1c499ec1)
