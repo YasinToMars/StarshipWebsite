@@ -3,9 +3,9 @@
 This is an inspiring website with the goal of giving latest news about SpaceX's Starship rocket to rocket nerds. <br>
 ### About websites:
 There is a website for the user page, where the user can get the latest news about Starship or contact the website admin. <br>
-**Link to the user website: https://starshipweb.onrender.com** <br>
+**Link to the user website: [https://starshipweb.onrender.com*](https://starshipuserwebsite.onrender.com)* <br>
 There is also a website for the admin. The admin can use that panel to see who wants to contact them. <br> 
-**Link to the admin website:https://starshipweb-admin-panel.onrender.com**
+**Link to the admin website: https://starshipwebsite-1z5w.onrender.com*
 
 # User Website
 ### HomePage:
